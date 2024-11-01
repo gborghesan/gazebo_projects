@@ -351,11 +351,9 @@
         <robot_base_frame>chassis</robot_base_frame>
       </plugin>
     </model>
-<!--
-    wall
 
     <include>
-      <uri>warehouse.sdf</uri>
+      <uri>package://ros_gz_description/worlds/blue_in_small_warehouse.sdf</uri>
       <name>warehouse</name>
       <pose>0 0 0 0 0 0</pose>
       <plugin filename="gz-sim-touchplugin-system"
@@ -366,7 +364,7 @@
         <enabled>true</enabled>
       </plugin>
     </include>
--->
+
 
 
 
