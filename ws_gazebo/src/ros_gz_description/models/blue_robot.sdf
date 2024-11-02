@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
     <model name='vehicle_blue'>
-        
-
-        <frame name="lidar_frame" attached_to='chassis'>
-            <pose>0.4 0 0.25 0 0 0</pose>
-        </frame>
-        
         <link name='chassis'>
             <pose>0.25 0 0.2 0 0 0</pose>
             <inertial> <!--inertial
@@ -219,6 +213,14 @@
                 </material>
             </visual>
             <collision name='collision'>
+                <surface>
+                    <friction>
+                      <ode>
+                        <mu>0.0</mu>
+                        <mu2>0.0</mu2>
+                      </ode>
+                    </friction>
+                  </surface>
                 <geometry>
                     <sphere>
                         <radius>0.1</radius>
@@ -229,6 +231,7 @@
 
         <!--connecting
         these links together using joints-->
+
         <joint name='left_wheel_joint' type='revolute'> <!--continous
             joint is not supported yet-->
             <pose relative_to='left_wheel' />
@@ -264,7 +267,7 @@
         <!--different
         type of joints ball joint--> <!--defult
         value is the child-->
-        <joint name='caster_wheel' type='ball'>
+        <joint name='caster_wheel' type='fixed'>
             <parent>chassis</parent>
             <child>caster</child>
         </joint>
