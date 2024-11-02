@@ -352,18 +352,24 @@
       </plugin>
     </model>
 
-    <include>
-      <uri>package://ros_gz_description/worlds/blue_in_small_warehouse.sdf</uri>
-      <name>warehouse</name>
-      <pose>0 0 0 0 0 0</pose>
+       <model name="warehouse">
+      <include>
+        <uri>package://ros_gz_description/models/warehouse.sdf</uri>
+        <name>warehouse</name>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+      <!--
       <plugin filename="gz-sim-touchplugin-system"
-        name="gz::sim::systems::TouchPlugin">
-        <target>vehicle_blue</target>
-        <namespace>warehouse</namespace>
-        <time>0.001</time>
-        <enabled>true</enabled>
-      </plugin>
-    </include>
+      name="gz::sim::systems::TouchPlugin">
+      <target>vehicle_blue</target>
+      <namespace>warehouse</namespace>
+      <time>0.001</time>
+      <enabled>true</enabled>
+    </plugin> -->
+    </model>
+
+
+
 
 
 

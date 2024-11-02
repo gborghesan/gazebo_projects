@@ -2,66 +2,68 @@
 <sdf version="1.8">
     <model name='warehouse'>
       <static>true</static>
+    
       <include>
-        <uri>../local_models/brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_1_1</name>
         <pose>6 -4 0 0 0 0</pose>
       </include>
+        
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_1_2</name>
         <pose>6 0 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_1_3</name>
         <pose>6 4 0 0 0 0</pose>
       </include>
 
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_2_1</name>
         <pose>-6 -4 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_2_2</name>
         <pose>-6 0 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_2_3</name>
         <pose>-6 4 0 0 0 0</pose>
       </include>
 
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_3_1</name>
         <pose>-4 6 0 0 0 1.57079632679</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_3_2</name>
         <pose>0 6 0 0 0 1.57079632679</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_3_3</name>
         <pose>4 6 0 0 0 1.57079632679</pose>
       </include>
 
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_4_1</name>
         <pose>-4 -6 0 0 0 1.57079632679</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_4_2</name>
         <pose>0 -6 0 0 0 1.57079632679</pose>
       </include>
       <include>
-        <uri>model://brick_wall_3</uri>
+        <uri>package://ros_gz_description/models/brick_wall_3</uri>
         <name>brick_wall_4_3</name>
         <pose>4 -6 0 0 0 1.57079632679</pose>
       </include>
@@ -69,34 +71,36 @@
 
 
       <include>
-        <uri>model://shelf</uri>
+        <uri>package://ros_gz_description/models/shelf</uri>
         <name>shelf_1</name>
         <pose>-3.5 -3 0 0 0 0</pose>
       </include>
+
       <include>
-        <uri>model://shelf</uri>
+        <uri>package://ros_gz_description/models/shelf</uri>
         <name>shelf_2</name>
         <pose>-3.5 0 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://shelf</uri>
+        <uri>package://ros_gz_description/models/shelf</uri>
         <name>shelf_3</name>
         <pose>-3.5 3 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://shelf</uri>
+        <uri>package://ros_gz_description/models/shelf</uri>
         <name>shelf_4</name>
         <pose>4 -3 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://shelf</uri>
+        <uri>package://ros_gz_description/models/shelf</uri>
         <name>shelf_5</name>
         <pose>4 0 0 0 0 0</pose>
       </include>
       <include>
-        <uri>model://shelf</uri>
+        <uri>package://ros_gz_description/models/shelf</uri>
         <name>shelf_6</name>
         <pose>4 3 0 0 0 0</pose>
       </include>
+
     </model>
 </sdf>
