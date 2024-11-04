@@ -1,0 +1,69 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+    "name":"ros2_gazebo",
+   "dockerFile": "../Dockerfile",
+	"build": {
+		"args": {
+			"WORKSPACE": "${containerWorkspaceFolder}"
+		}
+	},
+	"remoteUser": "ros",
+	"containerUser": "ros",
+	"runArgs": [
+		"--network=host",
+		"--cap-add=SYS_PTRACE", 
+        "--cap-add=SYS_NICE", 
+        "--privileged",
+		"--security-opt=seccomp:unconfined",
+		"--security-opt=apparmor:unconfined",
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--volume=/mnt/wslg:/mnt/wslg",
+        "--volume=/dev/bus/usb:/dev/bus/usb",
+		"--ipc=host",
+        "--name=ros2_gazebo",
+        "--ulimit=rtprio=99",
+        "--ulimit=memlock=-1:-1",
+		"--user=ros:ros"
+		//"-v", "/dev:/dev", //ps5 controller
+		//"-v", "/run/udev:/run/udev" //ps5 controller
+	], 
+    "workspaceMount": "source=${localWorkspaceFolder}/src,target=/home/ros/ws_gazebo/src,type=bind",
+	"postCreateCommand": "bash -c 'sudo chown -R ros:ros /home/ros/ws_gazebo && source /opt/ros/jazzy/setup.bash && colcon build --symlink-install",
+	// "mounts": ["source=${localWorkspaceFolder}/data,target=/home/ros2/ws_eye_surgery/data,type=bind,consistency=cached"],
+	//"postCreateCommand": "sudo apt-get update && sudo apt-get install -y udev libhidapi-dev && pip install lxml pydualsense && sudo chown -R ros2:ros2 /home/ros/ws_artery && sudo mkdir -p /etc/udev/rules.d && sudo cp src/ds5_ros/udev/99-dualsense.rules /etc/udev/rules.d && sudo udevadm control --reload-rules && sudo udevadm trigger && sudo chmod -R 777 /dev && catkin_make",
+    "workspaceFolder": "/home/ros/ws_gazebo",
+	"containerEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
+		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
+		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
+		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
+		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+	//	 "UDEV": "1" //ps5 controller
+	},
+	// Set *default* container specific settings.json values on container create.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cmake-tools",
+				"ms-azuretools.vscode-docker",
+				"redhat.vscode-yaml",
+				"redhat.vscode-xml",
+				"ms-iot.vscode-ros",
+				"twxs.cmake",
+				// "althack.ament-task-provider",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.vscode-jupyter-powertoys",
+//				"joaompinto.vscode-graphviz",
+				"smilerobotics.urdf",
+				//"sumneko.lua",
+				//"lextudio.restructuredtext",
+				//"lextudio.restructuredtext-pack",
+				"ms-vscode.cpptools-themes" 
+//				"demystifying-javascript.python-extensions-pack"
+			] 
+		}
+	}
+}
