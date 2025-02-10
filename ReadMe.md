@@ -78,7 +78,7 @@ Mainly, it suffices to run an image in a dev-container.
 
 - go to the `ws_gazebo` folder
 - `code .` and `reopen in container` 
-- the `postCreateCommand` in the `devcontainer.json` already run a `colcon luild`
+- the `postCreateCommand` in the `devcontainer.json` already run a `colcon build`
 - in a shell within the container, 
   - first source the local setup `source install/setup.bash`
   - then launch the launch file: `ros2 launch ros_gz_bringup warehouse.launch.py`

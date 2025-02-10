@@ -27,11 +27,11 @@
 		//"-v", "/dev:/dev", //ps5 controller
 		//"-v", "/run/udev:/run/udev" //ps5 controller
 	], 
+	"workspaceFolder": "/home/ros/ws_gazebo",
     "workspaceMount": "source=${localWorkspaceFolder}/src,target=/home/ros/ws_gazebo/src,type=bind",
-	"postCreateCommand": "bash -c 'sudo chown -R ros:ros /home/ros/ws_gazebo && source /opt/ros/jazzy/setup.bash && colcon build --symlink-install",
+	"postCreateCommand": "bash -c 'sudo chown -R ros:ros /home/ros/ws_gazebo && source /opt/ros/jazzy/setup.bash && colcon build --symlink-install && source install/setup.bash'",
 	// "mounts": ["source=${localWorkspaceFolder}/data,target=/home/ros2/ws_eye_surgery/data,type=bind,consistency=cached"],
 	//"postCreateCommand": "sudo apt-get update && sudo apt-get install -y udev libhidapi-dev && pip install lxml pydualsense && sudo chown -R ros2:ros2 /home/ros/ws_artery && sudo mkdir -p /etc/udev/rules.d && sudo cp src/ds5_ros/udev/99-dualsense.rules /etc/udev/rules.d && sudo udevadm control --reload-rules && sudo udevadm trigger && sudo chmod -R 777 /dev && catkin_make",
-    "workspaceFolder": "/home/ros/ws_gazebo",
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
 		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
