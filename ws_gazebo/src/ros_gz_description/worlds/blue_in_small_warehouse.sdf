@@ -296,9 +296,12 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
+
     <model name="ground_plane">
+
+
       <static>true</static>
-      <link name="link">
+      <link name="ground_base_link">
         <collision name="collision">
           <geometry>
             <plane>
@@ -329,12 +332,6 @@
       <include merge="true">
         <uri>package://ros_gz_description/models/blue_robot.sdf</uri>
       </include>
-
-      <plugin
-        filename="gz-sim-joint-state-publisher-system"
-        name="gz::sim::systems::JointStatePublisher">
-      </plugin>
-
       <plugin
         filename="gz-sim-pose-publisher-system"
         name="gz::sim::systems::PosePublisher">
@@ -345,6 +342,11 @@
       </plugin>
 
       <plugin
+        filename="gz-sim-joint-state-publisher-system"
+        name="gz::sim::systems::JointStatePublisher">
+      </plugin>
+
+      <plugin
         filename="gz-sim-odometry-publisher-system"
         name="gz::sim::systems::OdometryPublisher">
         <odom_frame>odom</odom_frame>
@@ -352,8 +354,17 @@
       </plugin>
     </model>
 
-       <model name="warehouse">
+    <model name="warehouse">
       <include>
+        <plugin
+          filename="gz-sim-pose-publisher-system"
+          name="gz::sim::systems::PosePublisher">
+          <publish_link_pose>true</publish_link_pose>
+          <use_pose_vector_msg>true</use_pose_vector_msg>
+          <static_publisher>true</static_publisher>
+          <static_update_frequency>50</static_update_frequency>
+          <publish_nested_model_pose>true</publish_nested_model_pose>
+        </plugin>
         <uri>package://ros_gz_description/models/warehouse.sdf</uri>
         <name>warehouse</name>
         <pose>0 0 0 0 0 0</pose>
@@ -367,17 +378,6 @@
       <enabled>true</enabled>
     </plugin> -->
     </model>
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Moving Left-->
