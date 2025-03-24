@@ -298,7 +298,16 @@
 
 
     <model name="ground_plane">
-
+       <plugin
+    filename="gz-sim-pose-publisher-system"
+    name="gz::sim::systems::PosePublisher">
+    <publish_link_pose>true</publish_link_pose>
+    <use_pose_vector_msg>true</use_pose_vector_msg>
+    <static_publisher>true</static_publisher>
+    <static_update_frequency>50</static_update_frequency>
+    <publish_nested_model_pose>true</publish_nested_model_pose>
+    <publish_model_pose>true</publish_model_pose>
+      </plugin> 
 
       <static>true</static>
       <link name="ground_base_link">
@@ -323,23 +332,18 @@
           </material>
         </visual>
       </link>
-    </model>
+
+      
+   
 
 
     <model name="blue_robot">
       <self_collide>true</self_collide>
-      <pose>0 0 1 0 0 0</pose>
+      <pose>0 1 1 0 0 0</pose>
       <include merge="true">
         <uri>package://ros_gz_description/models/blue_robot.sdf</uri>
       </include>
-      <plugin
-        filename="gz-sim-pose-publisher-system"
-        name="gz::sim::systems::PosePublisher">
-        <publish_link_pose>true</publish_link_pose>
-        <use_pose_vector_msg>true</use_pose_vector_msg>
-        <static_publisher>true</static_publisher>
-        <static_update_frequency>50</static_update_frequency>
-      </plugin>
+
 
       <plugin
         filename="gz-sim-joint-state-publisher-system"
@@ -353,18 +357,10 @@
         <robot_base_frame>chassis</robot_base_frame>
       </plugin>
     </model>
-
+ </model>
     <model name="warehouse">
       <include>
-        <plugin
-          filename="gz-sim-pose-publisher-system"
-          name="gz::sim::systems::PosePublisher">
-          <publish_link_pose>true</publish_link_pose>
-          <use_pose_vector_msg>true</use_pose_vector_msg>
-          <static_publisher>true</static_publisher>
-          <static_update_frequency>50</static_update_frequency>
-          <publish_nested_model_pose>true</publish_nested_model_pose>
-        </plugin>
+   
         <uri>package://ros_gz_description/models/warehouse.sdf</uri>
         <name>warehouse</name>
         <pose>0 0 0 0 0 0</pose>
@@ -377,6 +373,20 @@
       <time>0.001</time>
       <enabled>true</enabled>
     </plugin> -->
+   
+      
+      
+      <!--   <plugin
+   filename="gz-sim-pose-publisher-system"
+    name="gz::sim::systems::PosePublisher">
+    <publish_link_pose>true</publish_link_pose>
+    <use_pose_vector_msg>true</use_pose_vector_msg>
+    <static_publisher>true</static_publisher>
+    <static_update_frequency>50</static_update_frequency>
+    <publish_nested_model_pose>true</publish_nested_model_pose>
+    <publish_model_pose>true</publish_model_pose>
+    <publish_visual_pose>true</publish_visual_pose>
+  </plugin>  -->
     </model>
 
 
@@ -432,5 +442,7 @@
         linear: {x: 0.0}, angular: {z: 0.0}
       </output>
     </plugin>
+
+  
   </world>
 </sdf>

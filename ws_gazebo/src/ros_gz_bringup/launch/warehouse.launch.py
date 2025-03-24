@@ -68,7 +68,11 @@ def generate_launch_description():
         }],
         output='screen'
     )
-
+    tf_static_pub = Node(package = "tf2_ros", 
+                       executable = "static_transform_publisher",
+                       arguments =  ["0", "0", "0", "0", "0", "0", "ground_plane/blue_robot/chassis",  "chassis"])
+    
+    
 
 
     return LaunchDescription([
@@ -77,5 +81,6 @@ def generate_launch_description():
                               description='Open RViz.'),
         bridge,
         robot_state_publisher,
-        rviz
+        rviz,
+        tf_static_pub
     ])

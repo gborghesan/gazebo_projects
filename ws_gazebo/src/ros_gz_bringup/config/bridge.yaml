@@ -2,17 +2,19 @@
   gz_topic_name: "/lidar"
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
 - ros_topic_name: "/joint_states"
   gz_topic_name: "/world/warehouse_world/model/blue_robot/joint_state"
   ros_type_name: "sensor_msgs/msg/JointState"
+  direction: GZ_TO_ROS
   gz_type_name: "gz.msgs.Model"
 - ros_topic_name: "/tf"
-  gz_topic_name: "/model/blue_robot/tf"
+  gz_topic_name: "/model/ground_plane/pose"
   ros_type_name: "tf2_msgs/msg/TFMessage"
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
 - ros_topic_name: "/tf_static"
-  gz_topic_name: "/model/blue_robot/tf_static"
+  gz_topic_name: "/model/ground_plane/pose_static"
   ros_type_name: "tf2_msgs/msg/TFMessage"
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
@@ -20,7 +22,11 @@
   gz_topic_name: "/model/blue_robot/odometry"
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
 - ros_topic_name: "/cmd_vel"
   gz_topic_name: "/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
+
+
+  
