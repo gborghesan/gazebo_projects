@@ -68,9 +68,15 @@ def generate_launch_description():
         }],
         output='screen'
     )
-    tf_static_pub = Node(package = "tf2_ros", 
+    tf_static_pub_chassis = Node(package = "tf2_ros", 
                        executable = "static_transform_publisher",
                        arguments =  ["0", "0", "0", "0", "0", "0", "ground_plane/blue_robot/chassis",  "chassis"])
+    tf_static_pub_rw = Node(package = "tf2_ros", 
+                       executable = "static_transform_publisher",
+                       arguments =  ["0", "0", "0", "0", "0", "0", "ground_plane/blue_robot/right_wheel",  "right_wheel"])
+    tf_static_pub_lw = Node(package = "tf2_ros", 
+                       executable = "static_transform_publisher",
+                       arguments =  ["0", "0", "0", "0", "0", "0", "ground_plane/blue_robot/left_wheel",  "left_wheel"])
     
     
 
@@ -82,5 +88,5 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         rviz,
-        tf_static_pub
+        tf_static_pub_chassis,tf_static_pub_rw,tf_static_pub_lw
     ])
