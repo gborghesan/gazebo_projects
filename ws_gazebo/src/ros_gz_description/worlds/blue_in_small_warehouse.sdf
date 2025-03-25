@@ -343,13 +343,10 @@
       <include merge="true">
         <uri>package://ros_gz_description/models/blue_robot.sdf</uri>
       </include>
-
-
       <plugin
         filename="gz-sim-joint-state-publisher-system"
         name="gz::sim::systems::JointStatePublisher">
       </plugin>
-
       <plugin
         filename="gz-sim-odometry-publisher-system"
         name="gz::sim::systems::OdometryPublisher">
@@ -357,6 +354,13 @@
         <robot_base_frame>chassis</robot_base_frame>
       </plugin>
     </model>
+  <model name="semantic_objts">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static> 
+      <include merge="true">
+        <uri>package://ros_gz_description/models/semantic_objs.sdf</uri>
+      </include>
+</model>
  </model>
     <model name="warehouse">
       <include>
